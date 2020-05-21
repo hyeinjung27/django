@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %} 
+    <link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="name"><h2>{{post.title}}</h2></div>
+        <div class="content">
+            <p1>{{post.content}}</p1>
+            <div class="date"><p2>{{post.duedate}}</p2></div>
+        </div>
+    </div>
+    <div class="link">
+        <a style = 'color: rgb(88,88,88)' href="{% url 'home' %}">홈으로</a>
+        <a style = 'color: rgb(88,88,88)' href="{% url 'edit' post.pk %}">수정하기</a>
+        <a style = 'color: rgb(88,88,88)' href="{% url 'delete' post.pk %}">삭제하기</a>
+    </div>
+</body>
+</html>

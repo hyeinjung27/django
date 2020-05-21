@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %} 
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="name">
+            <span class="material-icons">emoji_objects</span>
+            <h2>미리미리 하자</h2>
+            <span class="material-icons">emoji_objects</span>
+        </div>
+        {% for post in posts %}
+        <div class="contents">
+            <div class="todoname">
+                <span class="material-icons">emoji_objects</span>
+                <a style = 'color: rgb(88, 88, 88)' href="{% url 'detail' post.pk %}">{{post.title}}</a>
+            </div>
+            <div class="tododate">
+                <span>{{post.duedate}}</span>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="add">
+            <a style = 'color: rgb(88, 88, 88)' href="{% url 'new' %}">일정 추가하기</a>
+        </div>
+    </div>
+</body>
+</html>

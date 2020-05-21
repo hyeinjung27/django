@@ -1,0 +1,76 @@
+html {
+    font-size: 62.5%;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(255, 210, 0);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.name {
+    width: 100%;
+    font-size: 1.5rem;
+    background-color: white;
+    color: rgb(255, 210, 0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.content {
+    font-size: 2rem;
+    font-weight: 600;
+    width: 100%;
+    color: rgb(88,88,88);
+    border: 0.5rem white solid;
+    box-sizing: border-box;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content p2 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.link {
+    width: 40%;
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+a {
+    text-decoration: none;
+}
+
+.link a {
+    margin: 0.5rem;
+    font-weight: 700;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    border-radius: 5%;
+}
