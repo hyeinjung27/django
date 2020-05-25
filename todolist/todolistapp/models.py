@@ -6,5 +6,9 @@ class Post(models.Model):
     content = models.TextField(null=True)
     duedate = models.DateTimeField(null=True)
 
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    content = models.TextField(null=True)
+
     def __str__(self):
         return self.title

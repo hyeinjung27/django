@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %} 
-    <link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% extends 'base.html' %}
+    {% block title %}
+    {% load static %} 
+    <link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}">
     <title>Document</title>
+    {% endblock title %}
 </head>
 <body>
+    {% block content %}
     <div class="main">
         <div class="name"><h2>{{post.title}}</h2></div>
         <div class="content">
@@ -16,10 +20,23 @@
             <div class="date"><p2>{{post.duedate}}</p2></div>
         </div>
     </div>
+    <div class="comment">
+        {% for comment in post.comments.all %}
+        <li>{{ comment.content }}</li>
+        <a href = "{% url 'delete_comment' post.pk comment.pk %}">댓글 삭제</a>
+        {% endfor %}
+        
+        <form method = "POST">
+            {% csrf_token %}
+            <input type="text" name="content" placeholder="댓글을 입력해주세요">
+            <button type="submit">댓글 쓰기</button>
+        </form>
+    </div>
     <div class="link">
         <a style = 'color: rgb(88,88,88)' href="{% url 'home' %}">홈으로</a>
         <a style = 'color: rgb(88,88,88)' href="{% url 'edit' post.pk %}">수정하기</a>
         <a style = 'color: rgb(88,88,88)' href="{% url 'delete' post.pk %}">삭제하기</a>
     </div>
+    {% endblock content %}
 </body>
 </html>

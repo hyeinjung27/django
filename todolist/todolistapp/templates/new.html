@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %} 
-    <link rel="stylesheet" type="text/css" href="{% static 'new.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% extends 'base.html' %}
+    {% block title %}
+    {% load static %} 
+    <link rel="stylesheet" type="text/css" href="{% static 'new.css' %}">
     <title>Document</title>
+    {% endblock title %}
 </head>
 <body>
+    {% block content %}
     <div class="name">
         <span class="material-icons">create</span>
         <h2>일정을 추가해요</h2>
@@ -24,5 +28,6 @@
             </div>
         </div>
     </form>
+    {% endblock content %}
 </body>
 </html>

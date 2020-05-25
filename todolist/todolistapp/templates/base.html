@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %} 
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title></title>
+    {% endblock title %}
+</head>
+<body>
+    <div class="maintitle">
+        <span class="material-icons">
+            label
+            </span>
+        <h2>나의 할 일</h2>
+    </div>
+    {% block content %}
+
+    {% endblock content %}
+</body>
+</html>

@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %} 
-    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% extends 'base.html' %}
+    {% block title %}
+    {% load static %} 
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
     <title>Document</title>
+    {% endblock title %}
 </head>
 <body>
+    {% block content %}
     <div class="main">
         <div class="name">
             <span class="material-icons">emoji_objects</span>
@@ -30,5 +34,6 @@
             <a style = 'color: rgb(88, 88, 88)' href="{% url 'new' %}">일정 추가하기</a>
         </div>
     </div>
+    {% endblock content %}
 </body>
 </html>

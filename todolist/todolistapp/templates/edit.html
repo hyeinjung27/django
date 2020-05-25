@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %} 
-    <link rel="stylesheet" type="text/css" href="{% static 'edit.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% extends 'base.html' %}
+    {% block title %}
+    {% load static %} 
+    <link rel="stylesheet" type="text/css" href="{% static 'edit.css' %}">
     <title>Document</title>
+    {% endblock title %}
 </head>
 <body>
+    {% block content %}
     <form method="POST">
         {% csrf_token %}
         <div>
@@ -25,5 +29,6 @@
         </div>
         <div class="button"><button style="background-color: white" type="submit">수정하기</button></div>
     </form>
+    {% endblock content %}
 </body>
 </html>
